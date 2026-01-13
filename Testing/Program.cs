@@ -5,8 +5,12 @@ using Microsoft.Extensions.Hosting;
 using MySql.Data.MySqlClient;
 using System.Data;
 using Testing;
+using Testing.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IDbConnection>((s) =>
 {
@@ -15,10 +19,8 @@ builder.Services.AddScoped<IDbConnection>((s) =>
     return conn;
 });
 
-IServiceCollection serviceCollection = builder.Services.AddTransient<IProductRepository, ProductRepository>();
+builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
