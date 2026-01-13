@@ -11,7 +11,7 @@
         <th>Stock Level</th>
     </tr>
 
-    @foreach (var product in @Model)
+    @foreach (var product in @Model ?? Enumerable.Empty<Product>())
     {
         <tr>
             <td>@product.ProductID</td>
