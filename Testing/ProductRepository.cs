@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System;
 using Testing.Models;
-using System.Data;
-using Dapper;
-using System.Collections.Generic;
 
 namespace Testing
 {
@@ -18,9 +15,9 @@ namespace Testing
             _conn = conn;
         }
 
-        public IEnumerable<Products> GetAllProducts()
+        public IEnumerable<Product> GetAllProducts()
         {
-            return _conn.Query<Products>("SELECT * FROM Products;");
+            return _conn.Query<Product>("SELECT * FROM Products;");
         }
     }
 }
