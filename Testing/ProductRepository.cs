@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System;
 using Testing.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Testing
 {
@@ -19,5 +20,11 @@ namespace Testing
         {
             return _conn.Query<Product>("SELECT * FROM Products;");
         }
+
+        public Product GetProduct(int id)
+        {
+            return _conn.QuerySingle<Product>("SELECT * FROM PRODUCTS WHERE PRODUCTID = @id", new { id = id });
+        }
+        
     }
 }
