@@ -13,7 +13,7 @@ namespace Testing
 
         public void UpdateProduct(Product product);
 
-        public void InsertProductj(Product productToInsert);
+        public void InsertProduct(Product productToInsert);
 
         public IEnumerable<Category> GetCategories();
 
