@@ -9,8 +9,14 @@ namespace Testing
     {
         public IEnumerable<Product> GetAllProducts();
 
-        Product GetProduct(int id);
+        public Product GetProduct(int id);
 
-        void UpdateProduct(Product product);
+        public void UpdateProduct(Product product);
+
+        public void InsertProductj(Product productToInsert);
+
+        public IEnumerable<Category> GetCategories();
+
+        public Product AssignCategory();
     }
 }
